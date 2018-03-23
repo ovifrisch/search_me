@@ -13,3 +13,7 @@ about how excited I am
 ovidiu=
 a smart kid
 asl
+adi
+is smart
+adi=
+a smart dude

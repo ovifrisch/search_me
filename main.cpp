@@ -42,6 +42,27 @@ void copy_file_to_here(ifstream& in_file, int partial_offset) {
 		db->add_node(line);
 }
 
+void help_message() {
+	cout << "**************************************************************************************" << endl;
+	cout << "This is a simple tool for storing and fetching data." << endl;
+	cout << "In the \"Add\" mode, enter a label followed by \"=\", then enter your data." << endl;
+	cout << "Example ~ " << endl;
+	cout << "Add: Operating System=" << endl;
+	cout << "Add: Software that manages a computer's hardware resources" << endl;
+	cout << "Add: " << endl;
+
+	cout << "To switch to querrying mode, enter \"ask\"" << endl;
+	cout << "Then enter the label. " << endl;
+	cout << "Example ~ " << endl;
+	cout << "Ask: Operating System" << endl;
+	cout << "The database will then be searched for your query" << endl;
+
+	cout << "To go back to Add mode, enter \"add\"" << endl;
+
+	cout << "Enter e to exit. Your data will be saved to disk and retrieved when you come back!" << endl;
+	cout << "**************************************************************************************" << endl;
+}
+
 int main(int argc, char* argv[]) {
 	
 
@@ -68,18 +89,17 @@ int main(int argc, char* argv[]) {
 	db = new Database();
 	Mode mode = Input;
 	string user_line;
+
+	cout << "Type \"help\" for help." << endl; 
 	while(true) {
 		if (mode == Input)
 			cout << "Add: ";
 		else
 			cout << "Ask: ";
 
-
 		getline(cin, user_line);
 		if (user_line.compare("help") == 0) {
-			cout << "Enter e to exit, otherwise enter some data and hit enter." << endl;
-			cout << "Enter \"ask\" to query the database." << endl;
-			cout << "Enter \"put\" to go back to inputting." << endl;
+			help_message();
 		}
 
 		else if (user_line.compare("e") == 0) {
