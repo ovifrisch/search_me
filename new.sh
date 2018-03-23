@@ -1,2 +1,0 @@
-make
-./search_me
