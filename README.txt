@@ -23,9 +23,9 @@ Simple search based on initial label.
 How to use:
 Clone the repository in a local directory
 cd into the directory
-Type "sh e.sh 1"
+Type "sh e.sh 0"
 This uses your DB from a previous session and lets you add to it.
 
-"sh e.sh 0" wipes any saved DB and starts with a clean one.
+"sh e.sh 1" wipes any saved DB and starts with a clean one.
 Only used for testing.
 
